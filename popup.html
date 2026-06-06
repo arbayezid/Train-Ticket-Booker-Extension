@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BD Rail Bot</title>
+    <style>
+        body {
+            width: 320px;
+            padding: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Clock Style */
+        .clock-container {
+            background: #222;
+            color: #00ff00;
+            /* Bright Green */
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .clock-time {
+            font-size: 28px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 2px;
+        }
+
+        .clock-label {
+            font-size: 10px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-top: -5px;
+            display: block;
+        }
+
+        /* Form Styles */
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #d32f2f;
+            /* Rail Red */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #b71c1c;
+        }
+
+        .note {
+            font-size: 11px;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Digital Clock Section -->
+    <div class="clock-container">
+        <div class="clock-time" id="bd-time">Loading...</div>
+        <span class="clock-label">Bangladesh Standard Time</span>
+    </div>
+
+    <!-- Booking Form -->
+    <h3 style="text-align:center; margin:0 0 10px 0;">Auto Booker Config</h3>
+
+    <label>Train Name (Partial Match)</label>
+    <input type="text" id="trainName" placeholder="e.g., PARABAT">
+
+    <label>Class Name (Exact)</label>
+    <input type="text" id="className" placeholder="e.g., S_CHAIR">
+
+    <label>Delay (ms) - Increase if net is slow</label>
+    <input type="number" id="delay" value="500">
+
+    <button id="startBtn">START BOOKING</button>
+
+    <p class="note">Open the search results page first.</p>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

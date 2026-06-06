@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "BD Railway Auto Booker",
+    "version": "1.0",
+    "description": "Automates seat selection and booking for eticket.railway.gov.bd",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "*://eticket.railway.gov.bd/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "A",
+            "48": "B",
+            "128": "C"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://eticket.railway.gov.bd/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
